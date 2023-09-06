@@ -3,6 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "license": "MIT",
+  "repository": {
+    "url": "git+https://github.com/Im-Rises/nbody-simulator-barnes-hut-react-p5-website.git",
+    "type": "git"
+  },
+  "author": "Im-Rises <Quentin-morel8_@hotmail.com> (Quentin Morel)",
+  "description": "A react component that simulates the n-body problem using the Barnes-Hut algorithm and the p5.js library.",
+  "homepage": "https://im-rises.github.io/nbody-simulator-barnes-hut-react-p5-website/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
