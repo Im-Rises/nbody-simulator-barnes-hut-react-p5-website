@@ -12,12 +12,18 @@ function App() {
     const [particleMass, setParticleMass] = useState(1);
 
     return (
-        <>
-            <h1>Barnes-Hut N-Body simulation</h1>
-            <NbodySimulatorBarnesHut particlesCount={count} widthHeight={500} showQuadtree={false} maxDepth={maxDepth}
-                                     theta={theta} G={G} softening={softening} capacity={capacity}
-                                     particleMass={particleMass}
-                                     backgroundColor={new Color(100, 100, 100)}/>
+        <div className={'app-panel'}>
+            <h1 className={'title-app'}>Barnes-Hut N-Body simulation</h1>
+            <div className={'nbody-simulator-canvas-holder'}>
+                <NbodySimulatorBarnesHut particlesCount={count} widthHeight={500} showQuadtree={false}
+                                         maxDepth={maxDepth}
+                                         theta={theta} G={G} softening={softening} capacity={capacity}
+                                         particleMass={particleMass}
+                                         backgroundColor={new Color(100, 100, 100)}
+                                         divStyle={"width:100%; height:50vh; align-items:center; justify-content:center; display:flex;"}
+                                         canvasStyle={"object-fit:contain; max-width:90%; max-height:90%;"}
+                />
+            </div>
             <div className={'input-simulation-holder'}>
                 <div>
                     <label htmlFor={'input-particles-count'}>Particles count : </label>
@@ -91,7 +97,7 @@ function App() {
                     }}/>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 
