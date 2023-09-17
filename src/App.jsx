@@ -37,6 +37,16 @@ function App() {
                     }/>
                 </div>
                 <div>
+                    <label htmlFor={'input-particle-mass'}>Particle mass : </label>
+                    <input type={'number'} name={'input-particle-mass'} value={particleMass} min={1} onChange={(e) => {
+                        if (e.target.value === '' || parseInt(e.target.value) < 1) {
+                            setParticleMass(parseInt("1"));
+                            return;
+                        }
+                        setParticleMass(parseInt(e.target.value))
+                    }}/>
+                </div>
+                <div>
                     <label htmlFor={'input-max-depth'}>Max depth : </label>
                     <input type={'number'} name={'input-max-depth'} value={maxDepth} min={1} onChange={(e) => {
                         if (e.target.value === '' || parseInt(e.target.value) < 1) {
@@ -44,26 +54,6 @@ function App() {
                             return;
                         }
                         setMaxDepth(parseInt(e.target.value))
-                    }}/>
-                </div>
-                <div>
-                    <label htmlFor={'input-theta'}>Theta : </label>
-                    <input type={'number'} name={'input-theta'} value={theta} min={1} onChange={(e) => {
-                        if (e.target.value === '' || parseInt(e.target.value) < 1) {
-                            setTheta(parseInt("1"));
-                            return;
-                        }
-                        setTheta(parseInt(e.target.value))
-                    }}/>
-                </div>
-                <div>
-                    <label htmlFor={'input-g'}>G : </label>
-                    <input type={'number'} name={'input-g'} value={G} min={1} onChange={(e) => {
-                        if (e.target.value === '' || parseInt(e.target.value) < 1) {
-                            setG(parseInt("1"));
-                            return;
-                        }
-                        setG(parseInt(e.target.value))
                     }}/>
                 </div>
                 <div>
@@ -87,13 +77,23 @@ function App() {
                     }}/>
                 </div>
                 <div>
-                    <label htmlFor={'input-particle-mass'}>Particle mass : </label>
-                    <input type={'number'} name={'input-particle-mass'} value={particleMass} min={1} onChange={(e) => {
+                    <label htmlFor={'input-theta'}>Theta : </label>
+                    <input type={'number'} name={'input-theta'} value={theta} min={1} onChange={(e) => {
                         if (e.target.value === '' || parseInt(e.target.value) < 1) {
-                            setParticleMass(parseInt("1"));
+                            setTheta(parseInt("1"));
                             return;
                         }
-                        setParticleMass(parseInt(e.target.value))
+                        setTheta(parseInt(e.target.value))
+                    }}/>
+                </div>
+                <div>
+                    <label htmlFor={'input-g'}>G : </label>
+                    <input type={'number'} name={'input-g'} value={G} min={1} onChange={(e) => {
+                        if (e.target.value === '' || parseInt(e.target.value) < 1) {
+                            setG(parseInt("1"));
+                            return;
+                        }
+                        setG(parseInt(e.target.value))
                     }}/>
                 </div>
             </div>
