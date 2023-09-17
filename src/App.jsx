@@ -10,12 +10,13 @@ function App() {
     const [softening, setSoftening] = useState(100);
     const [capacity, setCapacity] = useState(1);
     const [particleMass, setParticleMass] = useState(1);
+    const [showQuadtree, setShowQuadtree] = useState(false);
 
     return (
         <div className={'app-panel'}>
             <h1 className={'title-app'}>Barnes-Hut N-Body simulation</h1>
             <div className={'nbody-simulator-canvas-holder'}>
-                <NbodySimulatorBarnesHut particlesCount={count} widthHeight={500} showQuadtree={false}
+                <NbodySimulatorBarnesHut particlesCount={count} widthHeight={500} showQuadtree={showQuadtree}
                                          maxDepth={maxDepth}
                                          theta={theta} G={G} softening={softening} capacity={capacity}
                                          particleMass={particleMass}
@@ -95,6 +96,11 @@ function App() {
                         }
                         setG(parseInt(e.target.value))
                     }}/>
+                </div>
+                <div>
+                    <label htmlFor={'input-show-quadtree'}>Show quadtree : </label>
+                    <input type={'checkbox'} name={'input-show-quadtree'} checked={showQuadtree}
+                           onChange={(e) => setShowQuadtree(e.target.checked)}/>
                 </div>
             </div>
         </div>
