@@ -1,6 +1,8 @@
 import {useState} from 'react'
 import './App.scss'
 import {NbodySimulatorBarnesHut, Color} from "nbody-simulator-react-barnes-hut-react-p5";
+import GitHubProjectPanel from "./components/GitHubProjectPanel.jsx";
+import {AUTHOR, GITHUB_LINK} from "./constants/project-constants.js";
 
 function App() {
     const [count, setCount] = useState(1000);
@@ -14,6 +16,7 @@ function App() {
 
     return (
         <div className={'app-panel'}>
+            <GitHubProjectPanel link={GITHUB_LINK} author={AUTHOR}/>
             <h1 className={'title-app'}>Barnes-Hut N-Body simulation</h1>
             <div className={'nbody-simulator-canvas-holder'}>
                 <NbodySimulatorBarnesHut particlesCount={count} widthHeight={500} showQuadtree={showQuadtree}
@@ -28,7 +31,7 @@ function App() {
             <div className={'input-simulation-holder'}>
                 <div>
                     <label htmlFor={'input-particles-count'}>Particles count : </label>
-                    <input type={'number'} name={'input-particles-count'} value={count} min={1} onChange={(e) => {
+                    <input type={'number'} id={'input-particles-count'} value={count} min={1} onChange={(e) => {
                         if (e.target.value === '' || parseInt(e.target.value) < 1) {
                             setCount(parseInt("1"));
                             return;
@@ -39,7 +42,7 @@ function App() {
                 </div>
                 <div>
                     <label htmlFor={'input-particle-mass'}>Particle mass : </label>
-                    <input type={'number'} name={'input-particle-mass'} value={particleMass} min={1} onChange={(e) => {
+                    <input type={'number'} id={'input-particle-mass'} value={particleMass} min={1} onChange={(e) => {
                         if (e.target.value === '' || parseInt(e.target.value) < 1) {
                             setParticleMass(parseInt("1"));
                             return;
@@ -49,7 +52,7 @@ function App() {
                 </div>
                 <div>
                     <label htmlFor={'input-max-depth'}>Max depth : </label>
-                    <input type={'number'} name={'input-max-depth'} value={maxDepth} min={1} onChange={(e) => {
+                    <input type={'number'} id={'input-max-depth'} value={maxDepth} min={1} onChange={(e) => {
                         if (e.target.value === '' || parseInt(e.target.value) < 1) {
                             setMaxDepth(parseInt("1"));
                             return;
@@ -59,7 +62,7 @@ function App() {
                 </div>
                 <div>
                     <label htmlFor={'input-softening'}>Softening : </label>
-                    <input type={'number'} name={'input-softening'} value={softening} min={1} onChange={(e) => {
+                    <input type={'number'} id={'input-softening'} value={softening} min={1} onChange={(e) => {
                         if (e.target.value === '' || parseInt(e.target.value) < 1) {
                             setSoftening(parseInt("1"));
                             return;
@@ -69,7 +72,7 @@ function App() {
                 </div>
                 <div>
                     <label htmlFor={'input-capacity'}>Capacity : </label>
-                    <input type={'number'} name={'input-capacity'} value={capacity} min={1} onChange={(e) => {
+                    <input type={'number'} id={'input-capacity'} value={capacity} min={1} onChange={(e) => {
                         if (e.target.value === '' || parseInt(e.target.value) < 1) {
                             setCapacity(parseInt("1"));
                             return;
@@ -79,7 +82,7 @@ function App() {
                 </div>
                 <div>
                     <label htmlFor={'input-theta'}>Theta : </label>
-                    <input type={'number'} name={'input-theta'} value={theta} min={1} onChange={(e) => {
+                    <input type={'number'} id={'input-theta'} value={theta} min={1} onChange={(e) => {
                         if (e.target.value === '' || parseInt(e.target.value) < 1) {
                             setTheta(parseInt("1"));
                             return;
@@ -89,7 +92,7 @@ function App() {
                 </div>
                 <div>
                     <label htmlFor={'input-g'}>G : </label>
-                    <input type={'number'} name={'input-g'} value={G} min={1} onChange={(e) => {
+                    <input type={'number'} id={'input-g'} value={G} min={1} onChange={(e) => {
                         if (e.target.value === '' || parseInt(e.target.value) < 1) {
                             setG(parseInt("1"));
                             return;
@@ -99,7 +102,7 @@ function App() {
                 </div>
                 <div>
                     <label htmlFor={'input-show-quadtree'}>Show quadtree : </label>
-                    <input type={'checkbox'} name={'input-show-quadtree'} checked={showQuadtree}
+                    <input type={'checkbox'} id={'input-show-quadtree'} checked={showQuadtree}
                            onChange={(e) => setShowQuadtree(e.target.checked)}/>
                 </div>
             </div>
