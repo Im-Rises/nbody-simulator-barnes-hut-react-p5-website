@@ -42,8 +42,8 @@ function App() {
                 </div>
                 <div>
                     <label htmlFor={'input-particle-mass'}>Particle mass : </label>
-                    <input type={'number'} id={'input-particle-mass'} value={particleMass} min={1} onChange={(e) => {
-                        if (e.target.value === '' || parseInt(e.target.value) < 1) {
+                    <input type={'number'} id={'input-particle-mass'} value={particleMass} min={0.01} onChange={(e) => {
+                        if (e.target.value === '' || parseInt(e.target.value) < 0.01) {
                             setParticleMass(parseInt("1"));
                             return;
                         }
@@ -62,8 +62,8 @@ function App() {
                 </div>
                 <div>
                     <label htmlFor={'input-softening'}>Softening : </label>
-                    <input type={'number'} id={'input-softening'} value={softening} min={1} onChange={(e) => {
-                        if (e.target.value === '' || parseInt(e.target.value) < 1) {
+                    <input type={'number'} id={'input-softening'} value={softening} onChange={(e) => {
+                        if (e.target.value === '' || parseInt(e.target.value) === 0) {
                             setSoftening(parseInt("1"));
                             return;
                         }
@@ -82,9 +82,9 @@ function App() {
                 </div>
                 <div>
                     <label htmlFor={'input-theta'}>Theta : </label>
-                    <input type={'number'} id={'input-theta'} value={theta} min={1} onChange={(e) => {
-                        if (e.target.value === '' || parseInt(e.target.value) < 1) {
-                            setTheta(parseInt("1"));
+                    <input type={'number'} id={'input-theta'} value={theta} min={0} max={1} onChange={(e) => {
+                        if (e.target.value === '' || parseInt(e.target.value) < 0) {
+                            setTheta(parseInt("0"));
                             return;
                         }
                         setTheta(parseInt(e.target.value))
@@ -92,8 +92,8 @@ function App() {
                 </div>
                 <div>
                     <label htmlFor={'input-g'}>G : </label>
-                    <input type={'number'} id={'input-g'} value={G} min={1} onChange={(e) => {
-                        if (e.target.value === '' || parseInt(e.target.value) < 1) {
+                    <input type={'number'} id={'input-g'} value={G} onChange={(e) => {
+                        if (e.target.value === '') {
                             setG(parseInt("1"));
                             return;
                         }
