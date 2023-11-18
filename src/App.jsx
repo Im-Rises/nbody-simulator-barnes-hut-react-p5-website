@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import './App.scss'
-import {NbodySimulatorBarnesHut, Color} from "nbody-simulator-react-barnes-hut-react-p5";
+import {NbodySimulatorBarnesHut, Color} from "nbody-simulator-barnes-hut-react-p5";
 import GitHubProjectPanel from "./components/GitHubProjectPanel.jsx";
 import {AUTHOR, GITHUB_LINK} from "./constants/project-constants.js";
 
